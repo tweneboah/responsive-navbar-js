@@ -1,14 +1,64 @@
-# responsive-navbar-js
+@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
 
-Create a responsive navbar with only Javascript, CSS and HTML
+body {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: 'Alata', sans-serif;
+  background-color: rgb(67, 7, 7);
+}
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  font-size: 2rem;
+}
 
-# THE LOGIC
+/* Navbar */
+nav {
+  background: #593f62;
+  box-shadow: 3px 0px 2px #c95858;
+  color: aliceblue;
+}
 
-This concept relies mostly on css and js first look at the at the structure of the css and the html file but the main logic are as follows
+.nav-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.nav-toggle {
+  color: tomato;
+  font-size: 2rem;
+  background: transparent;
+  border-color: transparent;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
 
-# CSS
+.nav-toggle:hover {
+  transform: rotate(90deg);
+}
 
-```css
+.logo {
+  height: 40px;
+}
+
+.links a {
+  font-size: 1.4rem;
+  text-transform: capitalize;
+  display: block;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s linear;
+  color: antiquewhite;
+}
+
+.links a:hover {
+  background: rebeccapurple;
+  color: wheat;
+  padding-left: 1.5rem;
+}
+
 /* THE LOGIC */
 
 /* First: Hide the show icon by default */
@@ -77,30 +127,3 @@ This concept relies mostly on css and js first look at the at the structure of t
     color: var(--clr-primary-7);
   }
 }
-```
-
-# Javascript
-
-```js
-// classList - shows/gets all classes
-const navToggle = document.querySelector('.nav-toggle');
-const links = document.querySelector('.links');
-
-// contains - checks classList for specific class
-// add - add class
-// remove - remove class
-// toggle - toggles class
-
-navToggle.addEventListener('click', () => {
-  //   console.log(links.classList);
-  //   console.log(links.classList.contains('links'));
-  //   if (links.classList.contains('show-links')) {
-  //     links.classList.remove('show-links');
-  //   } else {
-  //     links.classList.add('show-links');
-  //   }
-
-  //OR
-  links.classList.toggle('show-links');
-});
-```
